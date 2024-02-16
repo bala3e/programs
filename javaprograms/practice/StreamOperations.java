@@ -108,7 +108,28 @@ public class StreamOperations {
         for(int i:re){
             System.out.print(i+" ,");
         }
+
     }
+
+
+    public void update(){
+     Employee e = new Employee(1,"bala");
+     Employee e1 = new Employee(2,"b");
+     Employee e2 = new Employee(3,"ba");
+     List<Employee> empLst = new ArrayList<>();
+     empLst.add(e);
+        empLst.add(e1);
+        empLst.add(e2);
+
+        List<Employee>eLST=empLst.stream().map(eTmp->{
+            eTmp.setName(eTmp.changeStr(eTmp.name));
+            return eTmp;
+        }).toList();
+        eLST.forEach(emp-> System.out.println(emp));
+
+
+    }
+
 
     private static boolean isPrime(int number) {
         return number > 1 && IntStream
@@ -121,3 +142,21 @@ public class StreamOperations {
         so.streamOperations();
     }
 }
+
+class Employee{
+    public int ID;
+    public String name ;
+    public Employee(int id,String name ){
+        this.ID=id;
+        this.name=name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String changeStr(String str){
+        return str+"Ba";
+    }
+}
+
+

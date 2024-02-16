@@ -18,7 +18,7 @@ public class PermutationString {
     }
 
     public Stream<String> permutationRecursive(String str){
-        int n=str.length();
+        //int n=str.length();
         if(str.isEmpty()){
             return Stream.of(" ");
         }else{
