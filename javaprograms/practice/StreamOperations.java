@@ -109,6 +109,7 @@ public class StreamOperations {
             System.out.print(i+" ,");
         }
 
+        System.out.println(number.stream().map(x->x.toUpperCase()).collect(Collectors.joining(",")) );
     }
 
 
@@ -140,6 +141,7 @@ public class StreamOperations {
     public static void main(String[] args) {
         StreamOperations so = new StreamOperations();
         so.streamOperations();
+
     }
 }
 
